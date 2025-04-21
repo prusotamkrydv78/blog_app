@@ -30,7 +30,7 @@ mongoose
   .connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,  // Increase the timeout if needed
+    serverSelectionTimeoutMS: 30000,  // Increase the timeout if needed
   })
   .then(() => {
     console.log("Database connected successfully!!");
