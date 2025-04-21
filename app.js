@@ -162,6 +162,7 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Blog app listening on port ${PORT}!`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Blog app listening on port ${PORT}!`);
+// });
+export default app;
