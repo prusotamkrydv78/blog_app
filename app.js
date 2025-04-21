@@ -30,7 +30,7 @@ mongoose
   .connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000,  // Increase the timeout if needed
+    serverSelectionTimeoutMS: 30000, // Increase the timeout if needed
   })
   .then(() => {
     console.log("Database connected successfully!!");
@@ -103,12 +103,28 @@ const dummyPosts = [
 ];
 
 // Routes
+const testSchema = new mongoose.Schema({
+  name: String,
+  address: String,
+});
+
+const testModel = mongoose.model("Test", testSchema);
 app.get("/", (req, res) => {
   res.render("home", {
     title: "BlogVerse - Home",
     posts: dummyPosts,
     user: null,
   });
+});
+app.get("/test", (req, res) => {
+  res.render("auth/test");
+});
+app.post("/test", async (req, res) => {
+  console.log(req.body);
+  const { name, address } = req.body;
+  const test = new testModel({ name, address });
+  await test.save();
+  res.send("Data saved");
 });
 app.use("/auth", AuthRoutes);
 
@@ -165,4 +181,4 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Blog app listening on port ${PORT}!`);
-}); 
+});
