@@ -37,23 +37,16 @@ const register = (req, res) => {
 //   }
 // };
 
+
 const registerUser = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   try {
-    const client = await clientPromise;
-
-    if (!mongoose.connection.readyState) {
-      await mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-    }
+    await connectDB(); // 🫶 this line is super important
 
     const { username, email, password } = req.body;
-
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
       return res.status(409).json({ message: "User already exists" });
@@ -62,13 +55,10 @@ const registerUser = async (req, res) => {
     const newUser = new UserModel({ username, email, password });
     await newUser.save();
 
-    console.log("💖 user registered successfully:", newUser);
-
-    // Redirect only works for server-side. If this is a client call, send success.
-    return res.status(200).json({ message: "User registered", user: newUser });
-  } catch (error) {
-    console.error("🔥 Registration error:", error);
-    return res.status(500).json({ message: "Server error" });
+    return res.status(201).json({ message: "User registered", user: newUser });
+  } catch (err) {
+    console.error("Error:", err);
+    return res.status(500).json({ message: "Something went wrong" });
   }
 };
 
