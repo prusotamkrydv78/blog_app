@@ -23,18 +23,14 @@ const register = (req, res) => {
   });
 };
 const registerUser = async (req, res) => {
-  console.log(" starting point of registering user");
   const { username, email, password } = req.body;
-  console.log("user got registered");
-  const newUser = new UserModel({ ...req.body });
-  
-  console.log("saving into the database");
-
-  await newUser.save();
-  console.log("user registerd successfully");
-  console.log(newUser);
-
-  res.redirect("/");
+  console.log(username, email, password);
+  const user = await UserModel.create({
+    username,
+    email,
+    password,
+  });
+  res.send("register complete");
 };
 
 export { login, register, loginUser, registerUser };
