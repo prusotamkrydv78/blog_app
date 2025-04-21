@@ -1,0 +1,773 @@
+/* Responsive CSS for BlogVerse
+   This file contains responsive styles for all pages and components
+   Organized by screen size from largest to smallest
+*/
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    /* General */
+    .container {
+        max-width: 960px;
+    }
+
+    /* Typography */
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 2rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 5rem 0;
+    }
+
+    /* Post Detail */
+    .post-detail-img {
+        max-height: 500px;
+    }
+
+    /* About Page */
+    .team-card .card-img-top {
+        height: 220px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    /* General */
+    .container {
+        max-width: 720px;
+    }
+
+    /* Typography */
+    h1, .h1 {
+        font-size: 2.25rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.75rem;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    /* Navigation */
+    .navbar-brand .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-collapse {
+        background-color: var(--dark-color);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-top: 1rem;
+    }
+
+    .dark-theme .navbar-collapse {
+        background-color: var(--light-color-2);
+    }
+
+    .navbar-actions {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-section p {
+        font-size: 1.125rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    /* Cards */
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    /* Post Detail */
+    .post-body {
+        font-size: 1rem;
+    }
+
+    .post-body blockquote {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .post-body blockquote p {
+        font-size: 1.125rem;
+    }
+
+    /* Comments */
+    .comment-section h3:after {
+        width: 40px;
+    }
+
+    /* Footer */
+    .footer-widget {
+        margin-bottom: 2.5rem;
+    }
+
+    /* About Page */
+    .value-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-card .card-img-top {
+        height: 280px;
+    }
+
+    /* Contact Page */
+    .contact-info {
+        margin-top: 2rem;
+    }
+
+    /* Categories Page */
+    .category-card .card-title {
+        font-size: 1.5rem;
+    }
+
+    /* Auth Pages */
+    .auth-image-container {
+        display: none;
+    }
+
+    .auth-form-container {
+        padding: 2rem;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* General */
+    .container {
+        max-width: 540px;
+    }
+
+    /* Typography */
+    h1, .h1 {
+        font-size: 2rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+
+    .display-4 {
+        font-size: 2.25rem;
+    }
+
+    .display-5 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    /* Spacing */
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .mb-5 {
+        margin-bottom: 2.5rem !important;
+    }
+
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    /* Cards */
+    .card {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    /* Post Detail */
+    .post-detail-img {
+        max-height: 400px;
+    }
+
+    .post-header h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Comments */
+    .comment {
+        padding: 1.25rem;
+    }
+
+    /* Footer */
+    .footer-top {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-title {
+        margin-bottom: 1rem;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    /* About Page */
+    .about-header, .contact-header, .categories-header {
+        padding: 2.5rem 0;
+    }
+
+    .team-card .card-img-top {
+        height: 250px;
+    }
+
+    .value-icon, .category-icon-sm {
+        width: 55px;
+        height: 55px;
+    }
+
+    /* Contact Page */
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Categories Page */
+    .category-card .card-title {
+        font-size: 1.35rem;
+    }
+
+    .tags-cloud {
+        gap: 0.5rem;
+    }
+
+    .tag-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    /* General */
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    /* Typography */
+    h1, .h1 {
+        font-size: 1.75rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.35rem;
+    }
+
+    .display-4 {
+        font-size: 1.85rem;
+    }
+
+    .display-5 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    /* Spacing */
+    section {
+        padding: 2rem 0;
+    }
+
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
+
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 2.5rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .hero-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Cards */
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    /* Post Detail */
+    .post-detail-img {
+        max-height: 300px;
+    }
+
+    .post-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-body {
+        font-size: 0.95rem;
+    }
+
+    .post-body blockquote {
+        padding: 1rem 1.25rem;
+    }
+
+    .post-body blockquote p {
+        font-size: 1rem;
+    }
+
+    /* Author box in post detail */
+    .card .d-flex.flex-column.flex-md-row {
+        align-items: center;
+        text-align: center;
+    }
+
+    .card .d-flex.flex-column.flex-md-row img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .card .d-flex.flex-column.flex-md-row .d-flex.gap-2 {
+        justify-content: center;
+    }
+
+    /* Comments */
+    .comment-section h3 {
+        font-size: 1.35rem;
+    }
+
+    .comment {
+        padding: 1rem;
+    }
+
+    .comment-author {
+        font-size: 0.95rem;
+    }
+
+    .comment-content {
+        font-size: 0.9rem;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 1.5rem;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .footer-top {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .footer-widget {
+        margin-bottom: 2rem;
+    }
+
+    .footer-title {
+        font-size: 1.15rem;
+    }
+
+    .social-links {
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* About Page */
+    .about-header, .contact-header, .categories-header {
+        padding: 2rem 0;
+    }
+
+    .value-icon, .category-icon-sm {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .team-card .card-img-top {
+        height: 220px;
+    }
+
+    .team-social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    .accordion-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* Contact Page */
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .social-link-lg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .form-floating > label {
+        font-size: 0.9rem;
+    }
+
+    /* Categories Page */
+    .category-card .card-title {
+        font-size: 1.25rem;
+    }
+
+    .category-card .card-text {
+        font-size: 0.85rem;
+    }
+
+    .tags-cloud {
+        gap: 0.4rem;
+    }
+
+    .tag-link {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    /* Auth Pages */
+    .auth-form-container {
+        padding: 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+
+    .auth-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .auth-social-buttons {
+        gap: 0.5rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Extra extra small devices (small portrait phones, less than 400px) */
+@media (max-width: 399.98px) {
+    /* Typography */
+    h1, .h1 {
+        font-size: 1.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.25rem;
+    }
+
+    .display-4 {
+        font-size: 1.65rem;
+    }
+
+    .display-5 {
+        font-size: 1.35rem;
+    }
+
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Cards */
+    .card-img-top {
+        height: 160px;
+    }
+
+    /* Post Detail */
+    .post-detail-img {
+        max-height: 250px;
+    }
+
+    .post-header h1 {
+        font-size: 1.35rem;
+    }
+
+    /* Team Cards */
+    .team-card .card-img-top {
+        height: 180px;
+    }
+
+    /* Auth Pages */
+    .auth-form-container {
+        padding: 1.25rem;
+    }
+
+    .auth-title {
+        font-size: 1.35rem;
+    }
+}
+
+/* Fix for iPhone 5/SE and other very small devices */
+@media (max-width: 320px) {
+    /* General */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Typography */
+    h1, .h1 {
+        font-size: 1.35rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.15rem;
+    }
+
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
+    /* Cards */
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-img-top {
+        height: 140px;
+    }
+
+    /* Post Detail */
+    .post-detail-img {
+        max-height: 200px;
+    }
+
+    /* Team Cards */
+    .team-card .card-img-top {
+        height: 150px;
+    }
+}
+
+/* Specific component fixes */
+
+/* Fix for navbar on small devices */
+@media (max-width: 991.98px) {
+    .navbar-nav .dropdown-menu {
+        background-color: transparent;
+        border: none;
+        padding-left: 1rem;
+        padding-right: 0;
+    }
+
+    .dark-theme .navbar-nav .dropdown-menu {
+        background-color: transparent;
+    }
+
+    .navbar-nav .dropdown-item {
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0.5rem 0;
+    }
+
+    .dark-theme .navbar-nav .dropdown-item {
+        color: var(--dark-color-3);
+    }
+
+    .navbar-nav .dropdown-item:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    .dark-theme .navbar-nav .dropdown-item:hover {
+        background-color: transparent;
+        color: var(--dark-color);
+    }
+}
+
+/* Fix for search collapse on small devices */
+@media (max-width: 767.98px) {
+    .search-container {
+        padding: 1rem;
+    }
+
+    .search-form .form-control {
+        height: 45px;
+    }
+}
+
+/* Fix for newsletter section on small devices */
+@media (max-width: 767.98px) {
+    .newsletter-form .input-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form .form-control {
+        border-radius: var(--border-radius) !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .newsletter-form .btn {
+        border-radius: var(--border-radius) !important;
+        width: 100%;
+    }
+}
+
+/* Fix for post author box on small devices */
+@media (max-width: 575.98px) {
+    .card-body.p-4 {
+        padding: 1.25rem !important;
+    }
+
+    .card-body.p-5 {
+        padding: 1.5rem !important;
+    }
+
+    /* Fix for author box buttons */
+    .card .d-flex.gap-2 .btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+        width: 120px;
+    }
+}
+
+/* Fix for pagination on small devices */
+@media (max-width: 399.98px) {
+    .pagination .page-link {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Fix for social share buttons on small devices */
+@media (max-width: 399.98px) {
+    .social-share .btn {
+        padding: 0.35rem;
+    }
+
+    /* Improve post meta display */
+    .post-header .d-flex.flex-wrap {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .post-header .d-flex.flex-wrap .d-flex.align-items-center.post-meta {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Fix for comment buttons on small devices */
+@media (max-width: 399.98px) {
+    .comment .btn {
+        font-size: 0.8rem;
+    }
+}
+
+/* Fix for back to top button on small devices */
+@media (max-width: 575.98px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}

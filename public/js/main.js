@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle like and bookmark buttons
     handleInteractionButtons();
+
+    // Handle responsive navbar
+    handleResponsiveNavbar();
+
+    // Initialize AOS animations
+    initAOS();
 });
 
 // Initialize Bootstrap components
@@ -215,4 +221,127 @@ function handleInteractionButtons() {
             console.log('Bookmark button clicked');
         });
     });
+}
+
+// Handle responsive navbar
+function handleResponsiveNavbar() {
+    // Close navbar collapse when clicking outside
+    document.addEventListener('click', function(event) {
+        const navbar = document.getElementById('mainNavbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (!navbar || !navbarToggler || !navbarCollapse) return;
+
+        // If navbar is expanded and click is outside navbar
+        if (navbarCollapse.classList.contains('show') &&
+            !navbarCollapse.contains(event.target) &&
+            !navbarToggler.contains(event.target)) {
+            // Create a new bootstrap collapse instance and hide it
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+        }
+    });
+
+    // Close navbar when clicking on a nav-link on mobile
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navLinks.length && navbarCollapse) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Only close if navbar is expanded (mobile view)
+                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+    }
+
+    // Handle dropdown menus on mobile
+    const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+
+    if (dropdownToggles.length) {
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                // Only handle differently on mobile
+                if (window.innerWidth < 992) {
+                    // Prevent default bootstrap dropdown behavior on mobile
+                    if (this.getAttribute('aria-expanded') === 'true') {
+                        // If already expanded, let the default behavior close it
+                        return;
+                    }
+
+                    // Close all other open dropdowns first
+                    dropdownToggles.forEach(otherToggle => {
+                        if (otherToggle !== this && otherToggle.getAttribute('aria-expanded') === 'true') {
+                            const dropdown = new bootstrap.Dropdown(otherToggle);
+                            dropdown.hide();
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // If transitioning from mobile to desktop view, ensure dropdowns are reset
+        if (window.innerWidth >= 992) {
+            const openDropdowns = document.querySelectorAll('.navbar-nav .dropdown-menu.show');
+            openDropdowns.forEach(dropdown => {
+                const toggle = dropdown.previousElementSibling;
+                if (toggle && toggle.classList.contains('dropdown-toggle')) {
+                    const bsDropdown = new bootstrap.Dropdown(toggle);
+                    bsDropdown.hide();
+                }
+            });
+        }
+    });
+}
+
+// Initialize AOS animations with responsive settings
+function initAOS() {
+    // Check if AOS is available
+    if (typeof AOS !== 'undefined') {
+        // Initialize AOS with responsive settings
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            disable: 'mobile', // Disable on mobile devices for better performance
+            offset: 50,
+            delay: 100,
+            // Responsive settings
+            responsive: {
+                0: {
+                    disable: false, // Enable on all devices
+                    offset: 30,
+                    duration: 600,
+                    delay: 0 // No delay on small devices for better UX
+                },
+                768: {
+                    offset: 50,
+                    duration: 800,
+                    delay: 100
+                }
+            }
+        });
+
+        // Refresh AOS when images are loaded
+        window.addEventListener('load', function() {
+            AOS.refresh();
+        });
+
+        // Refresh AOS on window resize (debounced)
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                AOS.refresh();
+            }, 250);
+        });
+    }
 }
