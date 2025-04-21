@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import AuthRoutes from "./routes/Auth.routes.js";
 
 dotenv.config();
 
@@ -93,6 +94,7 @@ app.get("/", (req, res) => {
     user: null
   });
 });
+app.use("/auth", AuthRoutes);
 
 app.get("/explore", (req, res) => {
   res.render("explore", {
@@ -122,28 +124,7 @@ app.get("/categories", (req, res) => {
     user: null
   });
 });
-
-app.get("/auth/login", (req, res) => {
-  res.render("auth/login", {
-    title: "BlogVerse - Login",
-    user: null
-  });
-});
-
-app.get("/login", (req, res) => {
-  res.redirect("/auth/login");
-});
-
-app.get("/auth/register", (req, res) => {
-  res.render("auth/register", {
-    title: "BlogVerse - Register",
-    user: null
-  });
-});
-
-app.get("/register", (req, res) => {
-  res.redirect("/auth/register");
-});
+ 
 
 app.get("/posts/:id", (req, res) => {
   const post = dummyPosts.find(post => post.id === req.params.id);
