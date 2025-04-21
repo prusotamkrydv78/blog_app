@@ -1,0 +1,203 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <!-- Page Header -->
+    <div class="explore-header" data-aos="fade-up">
+        <h1 class="explore-title">Explore Articles</h1>
+        <p class="explore-subtitle">Discover the latest and most popular articles across various topics. Use the filters below to find exactly what you're looking for.</p>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-bar" data-aos="fade-up" data-aos-delay="100">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for articles, topics, or authors..." aria-label="Search">
+                <button class="btn btn-primary" type="submit"><i class="fas fa-search me-2"></i> Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Filters -->
+    <div class="explore-filters" data-aos="fade-up" data-aos-delay="200">
+        <div>
+            <span class="explore-filter-label">Categories:</span>
+            <div class="filter-buttons">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Technology</button>
+                <button class="filter-btn">Lifestyle</button>
+                <button class="filter-btn">Travel</button>
+                <button class="filter-btn">Food</button>
+                <button class="filter-btn">Health</button>
+                <button class="filter-btn">Business</button>
+                <button class="filter-btn">Science</button>
+            </div>
+        </div>
+        
+        <div class="explore-sort">
+            <span class="explore-filter-label">Sort by:</span>
+            <select class="explore-sort-select">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="popular">Most Popular</option>
+                <option value="trending">Trending</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Featured Articles -->
+    <section class="mb-5" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="fw-bold mb-4">Featured Articles</h2>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card border-0 rounded-4 overflow-hidden h-100">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479" class="card-img-top" alt="Featured Post" style="height: 400px;">
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-primary">Featured</span>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                            <h3 class="text-white fw-bold mb-2">Getting Started with Node.js: A Comprehensive Guide</h3>
+                            <p class="text-white-50 mb-3">Learn everything you need to know about Node.js, from installation to building your first application.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/1.jpg" class="rounded-circle me-2" width="40" height="40" alt="Author">
+                                    <div class="text-white">
+                                        <p class="mb-0 fw-medium">John Doe</p>
+                                        <small class="text-white-50">May 15, 2023</small>
+                                    </div>
+                                </div>
+                                <a href="/posts/1" class="btn btn-light btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="row g-4 h-100">
+                    <div class="col-lg-12 col-md-6">
+                        <div class="card border-0 rounded-4 overflow-hidden h-100">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="card-img-top" alt="Featured Post" style="height: 190px;">
+                                <div class="position-absolute top-0 start-0 m-3">
+                                    <span class="badge bg-secondary">Technology</span>
+                                </div>
+                                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                    <h5 class="text-white fw-bold mb-1">Express.js Fundamentals</h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-white-50">Jane Smith</small>
+                                        <a href="/posts/2" class="btn btn-sm btn-light">Read</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-6">
+                        <div class="card border-0 rounded-4 overflow-hidden h-100">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1569012871812-f38ee64cd54c" class="card-img-top" alt="Featured Post" style="height: 190px;">
+                                <div class="position-absolute top-0 start-0 m-3">
+                                    <span class="badge bg-accent">Database</span>
+                                </div>
+                                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                    <h5 class="text-white fw-bold mb-1">MongoDB for Beginners</h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-white-50">John Doe</small>
+                                        <a href="/posts/3" class="btn btn-sm btn-light">Read</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- All Articles -->
+    <section data-aos="fade-up" data-aos-delay="400">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">All Articles</h2>
+            <div class="d-flex align-items-center">
+                <span class="me-2">View:</span>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-secondary active"><i class="fas fa-th-large"></i></button>
+                    <button type="button" class="btn btn-outline-secondary"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <% posts.forEach((post, index) => { %>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<%= index * 100 %>">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-light">Technology</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="<%= post.creator.profileImage %>" alt="<%= post.creator.username %>" class="rounded-circle me-2" width="30" height="30">
+                                <span class="small text-muted">By <%= post.creator.username %></span>
+                                <span class="small text-muted ms-auto"><i class="far fa-calendar-alt me-1"></i> <%= post.createdAt.toLocaleDateString() %></span>
+                            </div>
+                            <h5 class="card-title fw-bold"><%= post.title %></h5>
+                            <p class="card-text post-content"><%= post.content %></p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="/posts/<%= post.id %>" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                                <div>
+                                    <button class="btn btn-sm btn-light rounded-circle p-2 me-1"><i class="far fa-heart"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle p-2"><i class="far fa-bookmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="my-5 py-5 bg-light rounded-4" data-aos="fade-up">
+        <div class="container text-center py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">Never Miss an Update</h3>
+                    <p class="text-muted mb-4">Subscribe to our newsletter to receive the latest articles and updates directly in your inbox.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                    <small class="text-muted">We respect your privacy. Unsubscribe at any time.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%- include('partials/footer') %>

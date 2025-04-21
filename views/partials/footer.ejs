@@ -1,0 +1,144 @@
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget" data-aos="fade-up">
+                            <div class="footer-logo">
+                                <div class="logo-container">
+                                    <div class="logo-icon">
+                                        <i class="fas fa-pen-fancy"></i>
+                                    </div>
+                                    <span class="logo-text">BlogVerse</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 mb-4">A modern platform for sharing your thoughts, ideas, and stories with the world. Join our community of writers and readers today.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
+                            <h5 class="footer-title">Explore</h5>
+                            <ul class="footer-links">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/explore">Explore</a></li>
+                                <li><a href="#">Categories</a></li>
+                                <li><a href="#">Trending</a></li>
+                                <li><a href="#">Authors</a></li>
+                                <li><a href="/about">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
+                            <h5 class="footer-title">Resources</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Help Center</a></li>
+                                <li><a href="#">Guidelines</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget" data-aos="fade-up" data-aos-delay="300">
+                            <h5 class="footer-title">Newsletter</h5>
+                            <p class="mb-4">Subscribe to our newsletter to get the latest updates directly to your inbox.</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email address" required>
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="mt-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletterCheck" checked>
+                                    <label class="form-check-label small" for="newsletterCheck">
+                                        I agree to receive email newsletters from BlogVerse
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright mb-0">&copy; 2023 BlogVerse. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="footer-bottom-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome Pro -->
+    <script src="https://kit.fontawesome.com/your-code-here.js" crossorigin="anonymous"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Theme toggle is handled in main.js
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Dark Theme Blog Post Page Styles */
+
+/* Post Header */
+.dark-theme .breadcrumb-item a {
+    color: var(--primary-color);
+}
+
+.dark-theme .breadcrumb-item.active {
+    color: var(--dark-color-3);
+}
+
+.dark-theme .post-header h1 {
+    color: var(--dark-color);
+}
+
+.dark-theme .post-meta {
+    color: var(--dark-color-3);
+}
+
+/* Post Content */
+.dark-theme .post-body {
+    color: var(--dark-color);
+}
+
+.dark-theme .post-body blockquote {
+    background-color: rgba(99, 102, 241, 0.15);
+    border-left: 4px solid var(--primary-color);
+}
+
+.dark-theme .post-body blockquote footer {
+    color: var(--dark-color-3);
+}
+
+/* Comments Section */
+.dark-theme .comment-section {
+    border-top: 1px solid var(--light-color-3);
+}
+
+.dark-theme .comment-section h3 {
+    color: var(--dark-color);
+}
+
+.dark-theme .comment {
+    background-color: var(--light-color-2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .comment:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .comment-author {
+    color: var(--dark-color);
+}
+
+.dark-theme .comment-date {
+    color: var(--dark-color-3);
+}
+
+.dark-theme .comment-content {
+    color: var(--dark-color);
+}
+
+/* Comment Form */
+.dark-theme .comment-form textarea {
+    background-color: var(--light-color-3);
+    border: 1px solid var(--light-color-3);
+    color: var(--dark-color);
+}
+
+.dark-theme .comment-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Sort Dropdown */
+.dark-theme .sort-dropdown .btn {
+    background-color: var(--light-color-2);
+    color: var(--dark-color);
+    border: 1px solid var(--light-color-3);
+}
+
+.dark-theme .sort-dropdown .dropdown-menu {
+    background-color: var(--light-color-2);
+    border: 1px solid var(--light-color-3);
+}
+
+.dark-theme .sort-dropdown .dropdown-item {
+    color: var(--dark-color);
+}
+
+.dark-theme .sort-dropdown .dropdown-item:hover {
+    background-color: var(--light-color-3);
+}

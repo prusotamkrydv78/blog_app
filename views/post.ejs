@@ -1,0 +1,198 @@
+<%- include('partials/header') %>
+
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= post.title %></li>
+            </ol>
+        </nav>
+
+        <article data-aos="fade-up">
+            <!-- Post Header -->
+            <header class="post-header mb-5">
+                <h1 class="fw-bold mb-3 display-5"><%= post.title %></h1>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                    <div class="d-flex align-items-center mb-2 mb-md-0">
+                        <img src="<%= post.creator.profileImage %>" alt="<%= post.creator.username %>" class="rounded-circle me-3" width="48" height="48">
+                        <div>
+                            <div class="fw-bold"><%= post.creator.username %></div>
+                            <div class="post-meta text-muted small"><%= post.creator.bio || 'Writer at BlogVerse' %></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center post-meta">
+                        <span class="text-muted me-3"><i class="far fa-calendar-alt me-1"></i> <%= post.createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+                        <span class="text-muted"><i class="far fa-clock me-1"></i> 5 min read</span>
+                    </div>
+                </div>
+
+                <!-- Social Share -->
+                <div class="d-flex gap-2 mb-4 social-share">
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-circle p-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-info rounded-circle p-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-success rounded-circle p-2"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle p-2"><i class="fas fa-link"></i></a>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <figure class="mb-5">
+                <img src="<%= post.image %>" class="img-fluid rounded post-detail-img" alt="<%= post.title %>">
+                <figcaption class="text-muted small mt-2 text-center">Photo by <a href="#" class="text-decoration-none">Unsplash</a></figcaption>
+            </figure>
+
+            <!-- Post Content -->
+            <div class="post-body mb-5">
+                <p><%= post.content %></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
+                <p>Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
+
+                <blockquote class="blockquote my-5 p-5 bg-light rounded">
+                    <p class="mb-0">"The best way to predict the future is to create it."</p>
+                    <footer class="blockquote-footer mt-2">Abraham Lincoln</footer>
+                </blockquote>
+
+                <p>Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
+            </div>
+
+            <!-- Tags -->
+            <div class="mb-5">
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="#" class="badge bg-light text-dark text-decoration-none p-2">#technology</a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none p-2">#programming</a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none p-2">#webdev</a>
+                </div>
+            </div>
+
+            <!-- Author Box -->
+            <div class="card mb-5">
+                <div class="card-body p-4">
+                    <div class="d-flex flex-column flex-md-row">
+                        <img src="<%= post.creator.profileImage %>" alt="<%= post.creator.username %>" class="rounded-circle me-md-4 mb-3 mb-md-0" width="100" height="100">
+                        <div>
+                            <h5 class="card-title mb-1">About <%= post.creator.username %></h5>
+                            <p class="text-muted mb-3"><%= post.creator.bio || 'Writer at BlogVerse' %></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Follow</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mb-5">
+                <h4 class="fw-bold mb-4">You might also like</h4>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="card-img-top" alt="Related Post">
+                            <div class="card-body">
+                                <h6 class="card-title">Express.js Fundamentals</h6>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1569012871812-f38ee64cd54c" class="card-img-top" alt="Related Post">
+                            <div class="card-body">
+                                <h6 class="card-title">MongoDB for Beginners</h6>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479" class="card-img-top" alt="Related Post">
+                            <div class="card-body">
+                                <h6 class="card-title">Getting Started with Node.js</h6>
+                                <a href="#" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comment-section" id="comments">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold"><%= post.comments.length %> Comments</h3>
+                    <div class="dropdown sort-dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle rounded-pill px-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-sort me-1"></i> Sort by: Newest
+                        </button>
+                        <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-clock me-2"></i> Newest</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i> Oldest</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-thumbs-up me-2"></i> Most liked</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Comment Form -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body p-4 comment-form">
+                        <h5 class="mb-3 fw-bold">Leave a Comment</h5>
+                        <form>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Write your thoughts here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Comments List -->
+                <% if (post.comments.length === 0) { %>
+                    <div class="text-center py-5">
+                        <i class="far fa-comment-dots fa-3x text-muted mb-3"></i>
+                        <p class="lead">No comments yet. Be the first to comment!</p>
+                    </div>
+                <% } else { %>
+                    <% post.comments.forEach(comment => { %>
+                        <div class="comment mb-4 shadow-sm">
+                            <div class="d-flex">
+                                <img src="<%= comment.author.profileImage %>" alt="<%= comment.author.username %>" class="rounded-circle me-3" width="48" height="48">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h6 class="comment-author mb-0"><%= comment.author.username %></h6>
+                                        <small class="comment-date text-muted">2 days ago</small>
+                                    </div>
+                                    <p class="mb-3 comment-content"><%= comment.content %></p>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm text-primary p-0 me-3"><i class="far fa-thumbs-up me-1"></i> 12</button>
+                                        <button class="btn btn-sm text-primary p-0 me-3"><i class="far fa-thumbs-down me-1"></i> 2</button>
+                                        <button class="btn btn-sm text-primary p-0"><i class="far fa-reply me-1"></i> Reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Comments pagination" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link rounded-pill" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link rounded-pill" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-pill" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-pill" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link rounded-pill" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                <% } %>
+            </div>
+        </article>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
