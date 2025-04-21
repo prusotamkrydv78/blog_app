@@ -26,6 +26,8 @@ const registerUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
     const newUser = new UserModel({ ...req.body });
+    console.log('saving into the database');
+    
     await newUser.save();
     console.log("user registerd successfully");
     console.log(newUser);
