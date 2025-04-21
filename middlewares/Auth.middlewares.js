@@ -22,15 +22,13 @@ const register = (req, res) => {
     user: null,
   });
 };
-const registerUser = async (req, res) => {
-  const { username, email, password } = req.body;
-  console.log(username, email, password);
-  const user = await UserModel.create({
-    username,
-    email,
-    password,
-  });
-  res.send("register complete");
+const registerUser = async (req, res) => { 
+  // const user = await UserModel.create({
+  //   username,
+  //   email,
+  //   password,
+  // });
+  res.json({...req.body});
 };
 
 export { login, register, loginUser, registerUser };
