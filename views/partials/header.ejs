@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Dark Theme Post CSS -->
     <link rel="stylesheet" href="/css/dark-theme-post.css">
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="/css/pages.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -46,17 +48,17 @@
                         <li class="nav-item <%= title.includes('Explore') ? 'active' : '' %>">
                             <a class="nav-link" href="/explore">Explore</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown <%= title.includes('Categories') ? 'active' : '' %>">
                             <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <li><a class="dropdown-item" href="#">Technology</a></li>
-                                <li><a class="dropdown-item" href="#">Lifestyle</a></li>
-                                <li><a class="dropdown-item" href="#">Travel</a></li>
-                                <li><a class="dropdown-item" href="#">Food</a></li>
+                                <li><a class="dropdown-item" href="/categories?category=technology">Technology</a></li>
+                                <li><a class="dropdown-item" href="/categories?category=lifestyle">Lifestyle</a></li>
+                                <li><a class="dropdown-item" href="/categories?category=travel">Travel</a></li>
+                                <li><a class="dropdown-item" href="/categories?category=food">Food</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">View All Categories</a></li>
+                                <li><a class="dropdown-item" href="/categories">View All Categories</a></li>
                             </ul>
                         </li>
                         <li class="nav-item <%= title.includes('About') ? 'active' : '' %>">

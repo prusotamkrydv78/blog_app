@@ -116,6 +116,13 @@ app.get("/contact", (req, res) => {
   });
 });
 
+app.get("/categories", (req, res) => {
+  res.render("categories", {
+    title: "BlogVerse - Categories",
+    user: null
+  });
+});
+
 app.get("/auth/login", (req, res) => {
   res.render("auth/login", {
     title: "BlogVerse - Login",

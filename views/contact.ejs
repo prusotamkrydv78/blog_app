@@ -1,0 +1,184 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <!-- Page Header -->
+    <div class="contact-header text-center mb-5" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Have a question, suggestion, or just want to say hello? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+    </div>
+
+    <div class="row g-5">
+        <!-- Contact Form -->
+        <div class="col-lg-7" data-aos="fade-right">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h2 class="fw-bold mb-4">Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+                                    <label for="nameInput">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email" required>
+                                    <label for="emailInput">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="subjectInput" placeholder="Subject" required>
+                                    <label for="subjectInput">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="messageInput" placeholder="Your Message" style="height: 200px" required></textarea>
+                                    <label for="messageInput">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                    <label class="form-check-label" for="privacyCheck">
+                                        I agree to the <a href="#" class="text-decoration-none">Privacy Policy</a> and <a href="#" class="text-decoration-none">Terms of Service</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary px-5 py-3 fw-bold">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-5" data-aos="fade-left">
+            <div class="contact-info mb-5">
+                <h2 class="fw-bold mb-4">Get in Touch</h2>
+                <p class="mb-4">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+                
+                <div class="d-flex mb-4">
+                    <div class="contact-icon bg-primary bg-opacity-10 text-primary rounded-circle me-3">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Our Location</h5>
+                        <p class="text-muted mb-0">123 Blog Street, San Francisco, CA 94107, USA</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-4">
+                    <div class="contact-icon bg-primary bg-opacity-10 text-primary rounded-circle me-3">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Email Us</h5>
+                        <p class="text-muted mb-0">info@blogverse.com</p>
+                        <p class="text-muted mb-0">support@blogverse.com</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-4">
+                    <div class="contact-icon bg-primary bg-opacity-10 text-primary rounded-circle me-3">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Call Us</h5>
+                        <p class="text-muted mb-0">+1 (555) 123-4567</p>
+                        <p class="text-muted mb-0">+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-5">
+                    <div class="contact-icon bg-primary bg-opacity-10 text-primary rounded-circle me-3">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Working Hours</h5>
+                        <p class="text-muted mb-0">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p class="text-muted mb-0">Saturday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="social-links-lg mb-4">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-link-lg bg-primary text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link-lg bg-info text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link-lg bg-danger text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link-lg bg-dark text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link-lg bg-primary text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden" data-aos="fade-up">
+                <div class="card-body p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0968143067447!2d-122.41941638468173!3d37.77492997975903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1626384420777!5m2!1sen!2sus" 
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="mb-5 py-5 mt-5 bg-light rounded-4">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-muted mx-auto" style="max-width: 700px;">Find quick answers to common questions about contacting us.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="accordion" id="contactFaqAccordion">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How quickly will I receive a response?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#contactFaqAccordion">
+                                <div class="accordion-body">
+                                    We aim to respond to all inquiries within 24-48 hours during business days. For urgent matters, please indicate this in the subject line of your message.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Who should I contact for technical issues?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#contactFaqAccordion">
+                                <div class="accordion-body">
+                                    For technical issues or bugs, please email support@blogverse.com with details about the problem you're experiencing. Screenshots and step-by-step descriptions of how to reproduce the issue are very helpful.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How can I report inappropriate content?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#contactFaqAccordion">
+                                <div class="accordion-body">
+                                    If you come across content that violates our community guidelines, please use the "Report" button on the post or comment. You can also email moderation@blogverse.com with a link to the content and a brief explanation of your concerns.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%- include('partials/footer') %>

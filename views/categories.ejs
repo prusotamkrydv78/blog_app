@@ -1,0 +1,305 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <!-- Page Header -->
+    <div class="categories-header text-center mb-5" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-4">Explore Categories</h1>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Discover content across various topics that interest you. Browse through our categories to find articles that match your interests.</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar mb-5" data-aos="fade-up" data-aos-delay="100">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for categories..." aria-label="Search">
+                <button class="btn btn-primary" type="submit"><i class="fas fa-search me-2"></i> Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Featured Categories -->
+    <section class="mb-5">
+        <h2 class="fw-bold mb-4" data-aos="fade-up">Featured Categories</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card border-0 rounded-4 text-white overflow-hidden h-100 category-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" class="card-img h-100" alt="Technology">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between" style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))">
+                        <div class="category-icon bg-primary bg-opacity-25 text-white rounded-circle p-2 align-self-end">
+                            <i class="fas fa-laptop fa-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title fw-bold mb-2">Technology</h3>
+                            <p class="card-text mb-3">Explore the latest in tech, programming, AI, and digital innovation.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary bg-opacity-75 px-3 py-2 rounded-pill">124 articles</span>
+                                <a href="#" class="btn btn-sm btn-light rounded-pill px-3">Explore <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card border-0 rounded-4 text-white overflow-hidden h-100 category-card">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" class="card-img h-100" alt="Lifestyle">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between" style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))">
+                        <div class="category-icon bg-success bg-opacity-25 text-white rounded-circle p-2 align-self-end">
+                            <i class="fas fa-leaf fa-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title fw-bold mb-2">Lifestyle</h3>
+                            <p class="card-text mb-3">Discover tips for better living, wellness, and personal growth.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success bg-opacity-75 px-3 py-2 rounded-pill">98 articles</span>
+                                <a href="#" class="btn btn-sm btn-light rounded-pill px-3">Explore <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card border-0 rounded-4 text-white overflow-hidden h-100 category-card">
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b" class="card-img h-100" alt="Travel">
+                    <div class="card-img-overlay d-flex flex-column justify-content-between" style="background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))">
+                        <div class="category-icon bg-warning bg-opacity-25 text-white rounded-circle p-2 align-self-end">
+                            <i class="fas fa-plane fa-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title fw-bold mb-2">Travel</h3>
+                            <p class="card-text mb-3">Journey to exciting destinations and get insider travel tips.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning bg-opacity-75 px-3 py-2 rounded-pill">76 articles</span>
+                                <a href="#" class="btn btn-sm btn-light rounded-pill px-3">Explore <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Categories -->
+    <section class="mb-5 py-5 bg-light rounded-4">
+        <div class="container">
+            <h2 class="fw-bold mb-4" data-aos="fade-up">All Categories</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-laptop fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Technology</h5>
+                                <p class="text-muted small mb-0">124 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="150">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-leaf fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Lifestyle</h5>
+                                <p class="text-muted small mb-0">98 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-warning bg-opacity-10 text-warning rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-plane fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Travel</h5>
+                                <p class="text-muted small mb-0">76 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-danger bg-opacity-10 text-danger rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-utensils fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Food</h5>
+                                <p class="text-muted small mb-0">65 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-info bg-opacity-10 text-info rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-heartbeat fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Health</h5>
+                                <p class="text-muted small mb-0">54 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="350">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-secondary bg-opacity-10 text-secondary rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-briefcase fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Business</h5>
+                                <p class="text-muted small mb-0">48 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-flask fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Science</h5>
+                                <p class="text-muted small mb-0">42 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="450">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-palette fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Art & Design</h5>
+                                <p class="text-muted small mb-0">37 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-warning bg-opacity-10 text-warning rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-music fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Music</h5>
+                                <p class="text-muted small mb-0">31 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="550">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-danger bg-opacity-10 text-danger rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-film fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Movies</h5>
+                                <p class="text-muted small mb-0">29 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-info bg-opacity-10 text-info rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-book fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Education</h5>
+                                <p class="text-muted small mb-0">26 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="650">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm h-100 category-card-sm">
+                            <div class="card-body p-4 text-center">
+                                <div class="category-icon-sm bg-secondary bg-opacity-10 text-secondary rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-gamepad fa-lg"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-2">Gaming</h5>
+                                <p class="text-muted small mb-0">22 articles</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tags -->
+    <section class="mb-5 py-5">
+        <h2 class="fw-bold mb-4" data-aos="fade-up">Popular Tags</h2>
+        <div class="tags-cloud" data-aos="fade-up" data-aos-delay="100">
+            <a href="#" class="tag-link">#technology</a>
+            <a href="#" class="tag-link">#programming</a>
+            <a href="#" class="tag-link">#webdev</a>
+            <a href="#" class="tag-link">#javascript</a>
+            <a href="#" class="tag-link">#design</a>
+            <a href="#" class="tag-link">#travel</a>
+            <a href="#" class="tag-link">#food</a>
+            <a href="#" class="tag-link">#health</a>
+            <a href="#" class="tag-link">#fitness</a>
+            <a href="#" class="tag-link">#lifestyle</a>
+            <a href="#" class="tag-link">#business</a>
+            <a href="#" class="tag-link">#marketing</a>
+            <a href="#" class="tag-link">#startup</a>
+            <a href="#" class="tag-link">#productivity</a>
+            <a href="#" class="tag-link">#selfimprovement</a>
+            <a href="#" class="tag-link">#ai</a>
+            <a href="#" class="tag-link">#machinelearning</a>
+            <a href="#" class="tag-link">#datascience</a>
+            <a href="#" class="tag-link">#python</a>
+            <a href="#" class="tag-link">#react</a>
+            <a href="#" class="tag-link">#nodejs</a>
+            <a href="#" class="tag-link">#ux</a>
+            <a href="#" class="tag-link">#ui</a>
+            <a href="#" class="tag-link">#photography</a>
+            <a href="#" class="tag-link">#art</a>
+            <a href="#" class="tag-link">#music</a>
+            <a href="#" class="tag-link">#books</a>
+            <a href="#" class="tag-link">#education</a>
+            <a href="#" class="tag-link">#science</a>
+            <a href="#" class="tag-link">#nature</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mb-5 py-5">
+        <div class="card border-0 rounded-4 bg-primary text-white overflow-hidden">
+            <div class="card-body p-5 position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <h2 class="fw-bold mb-3">Want to contribute to our community?</h2>
+                        <p class="mb-4 opacity-75">Share your knowledge and expertise with our readers. Join BlogVerse today to start publishing articles in your favorite categories.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="/auth/register" class="btn btn-light text-primary px-4 py-2 fw-bold">Get Started</a>
+                            <a href="/explore" class="btn btn-outline-light px-4 py-2">Explore Articles</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block" data-aos="fade-left">
+                        <img src="https://illustrations.popsy.co/white/writing.svg" alt="Join BlogVerse" class="img-fluid" style="max-height: 250px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%- include('partials/footer') %>
