@@ -1,11 +1,5 @@
-import express from "express";
-import {
-  login,
-  loginUser,
-  register,
-  registerUser,
-} from "../middlewares/Auth.middlewares.js";
-
+import express from "express"; 
+import { login,loginUser,register,registerUser } from "../middlewares/Auth.middlewares.js";
 const AuthRoutes = express.Router();
 
 AuthRoutes.get("/login", login);
