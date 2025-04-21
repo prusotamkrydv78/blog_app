@@ -26,12 +26,22 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 // connecting to the database
+console.log("Attempting to connect to MongoDB Atlas...");
 mongoose
   .connect(connectionString)
   .then(() => {
     console.log("Database connected successfully!!");
   })
-  .catch((err) => console.log("Database failed to connect", err));
+  .catch((err) => {
+    console.log("Database failed to connect");
+    console.log("Error name:", err.name);
+    console.log("Error message:", err.message);
+    console.log("Error code:", err.code);
+    console.log("Error codeName:", err.codeName);
+    if (err.errorResponse) {
+      console.log("Error details:", err.errorResponse);
+    }
+  });
 
 // Dummy data for frontend
 const dummyUsers = [
@@ -124,7 +134,7 @@ app.get("/categories", (req, res) => {
     user: null
   });
 });
- 
+
 
 app.get("/posts/:id", (req, res) => {
   const post = dummyPosts.find(post => post.id === req.params.id);
