@@ -22,13 +22,12 @@ const register = (req, res) => {
     user: null,
   });
 };
-const registerUser = async (req, res) => { 
-  // const user = await UserModel.create({
-  //   username,
-  //   email,
-  //   password,
-  // });
-  res.json({...req.body});
+const registerUser = async (req, res) => {
+  const user = await UserModel.create({
+    ...req.body,
+  });
+
+  res.json({ message: "user registered", user: user });
 };
 
 export { login, register, loginUser, registerUser };

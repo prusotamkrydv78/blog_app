@@ -22,10 +22,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    profileImage: {
-      type: String,
-      public_id: String,
-    },
+    profileImage: String,
     posts: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -44,5 +41,5 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
- const UserModel = mongoose.model("User", UserSchema);
- export default UserModel;
+const UserModel = mongoose.model("User", UserSchema);
+export default UserModel;
