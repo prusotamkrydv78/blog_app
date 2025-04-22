@@ -28,22 +28,35 @@ app.use(express.static(path.join(__dirname, "public")));
 console.log("Attempting to connect to MongoDB Atlas...");
 
 // Get timeout from environment variables or use default
-const MONGODB_TIMEOUT = parseInt(process.env.MONGODB_TIMEOUT || '60000');
-console.log(`Using MongoDB timeout: ${MONGODB_TIMEOUT}ms`);
+// Use a shorter timeout for Vercel serverless environment
+const isVercel = process.env.VERCEL === '1';
+const MONGODB_TIMEOUT = parseInt(process.env.MONGODB_TIMEOUT || (isVercel ? '30000' : '60000'));
+console.log(`Using MongoDB timeout: ${MONGODB_TIMEOUT}ms on ${isVercel ? 'Vercel' : 'local'} environment`);
+
+// Configure MongoDB options based on environment
+const mongoOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: MONGODB_TIMEOUT,
+  socketTimeoutMS: MONGODB_TIMEOUT,
+  connectTimeoutMS: MONGODB_TIMEOUT,
+  family: 4 // Use IPv4, skip trying IPv6
+};
+
+// Add additional options for non-Vercel environments
+if (!isVercel) {
+  mongoOptions.maxPoolSize = 10;
+  mongoOptions.minPoolSize = 5;
+  mongoOptions.maxIdleTimeMS = 30000;
+}
+
+// Disable autoIndex in production
+mongoOptions.autoIndex = process.env.NODE_ENV !== 'production';
+
+console.log('Connecting with options:', JSON.stringify(mongoOptions, null, 2));
 
 mongoose
-  .connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
-    socketTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
-    connectTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
-    maxPoolSize: 10, // Maximum number of connections in the connection pool
-    minPoolSize: 5, // Minimum number of connections in the connection pool
-    maxIdleTimeMS: 30000, // How long a connection can remain idle before being removed
-    family: 4, // Use IPv4, skip trying IPv6
-    autoIndex: process.env.NODE_ENV !== 'production' // Disable autoIndex in production
-  })
+  .connect(connectionString, mongoOptions)
   .then(() => {
     console.log("Database connected successfully!!");
   })

@@ -1,7 +1,6 @@
 //login logics
 
 import UserModel from "../models/User.model.js"; // adjust the path if needed
-import mongoose from "mongoose";
 const login = (req, res) => {
   res.render("auth/login", {
     title: "BlogVerse - Login",
@@ -22,20 +21,17 @@ const loginUser = async (req, res) => {
       });
     }
 
-    // Find user by email with timeout handling
+    // Find user by email with simpler approach for Vercel
     let user;
     try {
-      user = await Promise.race([
-        UserModel.findOne({ email }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Login findOne timed out')), 15000)
-        )
-      ]);
-    } catch (timeoutErr) {
-      console.error('Login findOne timeout:', timeoutErr);
+      // Use maxTimeMS instead of Promise.race for better compatibility
+      user = await UserModel.findOne({ email }).maxTimeMS(10000);
+    } catch (dbErr) {
+      console.error('Login findOne error:', dbErr);
       return res.status(500).json({
         success: false,
-        message: "Database operation timed out. Please try again."
+        message: "Database operation failed. Please try again.",
+        error: dbErr.message
       });
     }
 
@@ -97,20 +93,17 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Check if user with this email already exists - with timeout handling
+    // Check if user with this email already exists - with simpler approach for Vercel
     let existingUser;
     try {
-      existingUser = await Promise.race([
-        UserModel.findOne({ email: req.body.email }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Email check timed out')), 15000)
-        )
-      ]);
-    } catch (timeoutErr) {
-      console.error('Email check timeout:', timeoutErr);
+      // Use a simpler approach that's more compatible with serverless
+      existingUser = await UserModel.findOne({ email: req.body.email }).maxTimeMS(10000);
+    } catch (dbErr) {
+      console.error('Email check error:', dbErr);
       return res.status(500).json({
         success: false,
-        message: "Database operation timed out. Please try again."
+        message: "Database operation failed. Please try again.",
+        error: dbErr.message
       });
     }
 
@@ -121,20 +114,17 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Check if username is already taken - with timeout handling
+    // Check if username is already taken - with simpler approach for Vercel
     let existingUsername;
     try {
-      existingUsername = await Promise.race([
-        UserModel.findOne({ username: req.body.username }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Username check timed out')), 15000)
-        )
-      ]);
-    } catch (timeoutErr) {
-      console.error('Username check timeout:', timeoutErr);
+      // Use a simpler approach that's more compatible with serverless
+      existingUsername = await UserModel.findOne({ username: req.body.username }).maxTimeMS(10000);
+    } catch (dbErr) {
+      console.error('Username check error:', dbErr);
       return res.status(500).json({
         success: false,
-        message: "Database operation timed out. Please try again."
+        message: "Database operation failed. Please try again.",
+        error: dbErr.message
       });
     }
 
@@ -148,20 +138,17 @@ const registerUser = async (req, res) => {
     // Create new user (exclude confirmPassword)
     const { confirmPassword, termsCheck, ...userData } = req.body;
 
-    // Create user with timeout handling
+    // Create user with simpler approach for Vercel
     let newUser;
     try {
-      newUser = await Promise.race([
-        UserModel.create(userData),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('User creation timed out')), 20000)
-        )
-      ]);
-    } catch (timeoutErr) {
-      console.error('User creation timeout:', timeoutErr);
+      // Direct create without Promise.race for better compatibility
+      newUser = await UserModel.create(userData);
+    } catch (dbErr) {
+      console.error('User creation error:', dbErr);
       return res.status(500).json({
         success: false,
-        message: "User creation timed out. Please try again."
+        message: "User creation failed. Please try again.",
+        error: dbErr.message
       });
     }
 
