@@ -26,11 +26,23 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // connecting to the database
 console.log("Attempting to connect to MongoDB Atlas...");
+
+// Get timeout from environment variables or use default
+const MONGODB_TIMEOUT = parseInt(process.env.MONGODB_TIMEOUT || '60000');
+console.log(`Using MongoDB timeout: ${MONGODB_TIMEOUT}ms`);
+
 mongoose
   .connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000, // Increase the timeout if needed
+    serverSelectionTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
+    socketTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
+    connectTimeoutMS: MONGODB_TIMEOUT, // Use environment variable
+    maxPoolSize: 10, // Maximum number of connections in the connection pool
+    minPoolSize: 5, // Minimum number of connections in the connection pool
+    maxIdleTimeMS: 30000, // How long a connection can remain idle before being removed
+    family: 4, // Use IPv4, skip trying IPv6
+    autoIndex: process.env.NODE_ENV !== 'production' // Disable autoIndex in production
   })
   .then(() => {
     console.log("Database connected successfully!!");

@@ -11,6 +11,14 @@
         "src": "/(.*)",
         "dest": "/app.js"
       }
-    ]
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "functions": {
+      "app.js": {
+        "memory": 1024,
+        "maxDuration": 60
+      }
+    }
   }
-  

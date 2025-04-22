@@ -11,6 +11,7 @@ const login = (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
+    console.log('Login attempt with email:', req.body.email);
     const { email, password } = req.body;
 
     // Validate input
@@ -21,8 +22,23 @@ const loginUser = async (req, res) => {
       });
     }
 
-    // Find user by email
-    const user = await UserModel.findOne({ email });
+    // Find user by email with timeout handling
+    let user;
+    try {
+      user = await Promise.race([
+        UserModel.findOne({ email }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Login findOne timed out')), 15000)
+        )
+      ]);
+    } catch (timeoutErr) {
+      console.error('Login findOne timeout:', timeoutErr);
+      return res.status(500).json({
+        success: false,
+        message: "Database operation timed out. Please try again."
+      });
+    }
+
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -37,6 +53,8 @@ const loginUser = async (req, res) => {
         message: "Invalid email or password"
       });
     }
+
+    console.log('Login successful for user:', user.username);
 
     // Login successful
     return res.status(200).json({
@@ -66,6 +84,11 @@ const register = (req, res) => {
 };
 const registerUser = async (req, res) => {
   try {
+    console.log('Registration attempt with data:', {
+      username: req.body.username,
+      email: req.body.email
+    });
+
     // Check if passwords match
     if (req.body.password !== req.body.confirmPassword) {
       return res.status(400).json({
@@ -74,8 +97,23 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Check if user with this email already exists
-    const existingUser = await UserModel.findOne({ email: req.body.email });
+    // Check if user with this email already exists - with timeout handling
+    let existingUser;
+    try {
+      existingUser = await Promise.race([
+        UserModel.findOne({ email: req.body.email }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Email check timed out')), 15000)
+        )
+      ]);
+    } catch (timeoutErr) {
+      console.error('Email check timeout:', timeoutErr);
+      return res.status(500).json({
+        success: false,
+        message: "Database operation timed out. Please try again."
+      });
+    }
+
     if (existingUser) {
       return res.status(400).json({
         success: false,
@@ -83,8 +121,23 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Check if username is already taken
-    const existingUsername = await UserModel.findOne({ username: req.body.username });
+    // Check if username is already taken - with timeout handling
+    let existingUsername;
+    try {
+      existingUsername = await Promise.race([
+        UserModel.findOne({ username: req.body.username }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Username check timed out')), 15000)
+        )
+      ]);
+    } catch (timeoutErr) {
+      console.error('Username check timeout:', timeoutErr);
+      return res.status(500).json({
+        success: false,
+        message: "Database operation timed out. Please try again."
+      });
+    }
+
     if (existingUsername) {
       return res.status(400).json({
         success: false,
@@ -93,8 +146,29 @@ const registerUser = async (req, res) => {
     }
 
     // Create new user (exclude confirmPassword)
-    const { confirmPassword, ...userData } = req.body;
-    const newUser = await UserModel.create(userData);
+    const { confirmPassword, termsCheck, ...userData } = req.body;
+
+    // Create user with timeout handling
+    let newUser;
+    try {
+      newUser = await Promise.race([
+        UserModel.create(userData),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('User creation timed out')), 20000)
+        )
+      ]);
+    } catch (timeoutErr) {
+      console.error('User creation timeout:', timeoutErr);
+      return res.status(500).json({
+        success: false,
+        message: "User creation timed out. Please try again."
+      });
+    }
+
+    console.log('User registered successfully:', {
+      id: newUser._id,
+      username: newUser.username
+    });
 
     // Return success response
     return res.status(201).json({
