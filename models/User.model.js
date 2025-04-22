@@ -7,34 +7,37 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    // email: {
-    //   trim: true,
-    //   type: String,
-    //   required: true,
-    // },
-    // password: {
-    //   trim: true,
-    //   type: String,
-    //   required: true,
-    // },
-    // bio: {
-    //   trim: true,
-    //   type: String,
-    //   required: false,
-    // },
-    // profileImage: String,
-    // posts: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Post",
-    //   },
-    // ],
-    // comments: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Comment",
-    //   },
-    // ],
+    email: {
+      trim: true,
+      type: String,
+      required: true,
+    },
+    password: {
+      trim: true,
+      type: String,
+      required: true,
+    },
+    bio: {
+      trim: true,
+      type: String,
+      required: false,
+    },
+    profileImage: {
+      type: String,
+      default: "https://via.placeholder.com/100?text=User"
+    },
+    posts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post",
+      },
+    ],
+    comments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
   },
   {
     timestamps: true,
